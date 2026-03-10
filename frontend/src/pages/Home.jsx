@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowRight, Users, Star, ScrollText, BookOpen } from "lucide-react";
+import { ArrowRight, ArrowBigRight, Users, Star, ScrollText, BookOpen, CornerRightDown } from "lucide-react";
 import EmailPreview from "../components/EmailPreview";
 import Pricing from "../components/Pricing";
 import Features from "../components/Features";
@@ -13,7 +13,7 @@ const Home = () => {
     <>
       <div className="max-w-6xl mx-auto px-6 pt-8 pb-16 flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
         {/* LEFT SIDE: Text Content */}
-        <div className="flex-1 space-y-6 text-center lg:text-left">
+        <div className="flex-1 space-y-8 text-center lg:text-left">
           {/* Badge - Made smaller and subtler */}
           <div className="inline-block px-3 py-1 bg-lime-100 border border-orange-100 rounded-full">
             <h2 className="flex items-center gap-2 text-orange-600 font-sans font-bold tracking-widest uppercase text-[10px] md:text-xs">
@@ -47,7 +47,13 @@ const Home = () => {
               href="#preview"
               className="border border-orange-200 hover:border-orange-300 bg-white text-gray-700 px-6 py-3 rounded-full font-bold transition-all text-sm md:text-base hover:bg-orange-50 cursor-pointer flex items-center justify-center"
             >
-              Read Sample
+              Read Sample <CornerRightDown />
+            </a>
+            <a
+              className={`flex items-center gap-2 cursor-pointer bg-gradient-to-r from-amber-700 to-amber-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:from-amber-500 hover:to-amber-700 transition duration-300`}
+            >
+              Read Books
+              <ArrowBigRight size={20} />
             </a>
           </div>
 

@@ -1,12 +1,16 @@
 import { ArrowBigRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   // We define the button as a constant so you don't have to repeat the same styles in two places
   const BookButton = ({ className }) => (
-    <a className={`flex items-center gap-2 cursor-pointer bg-gradient-to-r from-amber-700 to-amber-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:from-amber-500 hover:to-amber-700 transition duration-300 ${className}`}>
+   <Link 
+      to="/read" // <-- This magically routes to your new page instantly!
+      className={`flex items-center gap-2 cursor-pointer bg-gradient-to-r from-amber-700 to-amber-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:from-amber-500 hover:to-amber-700 transition duration-300 ${className ? className : ''}`}
+    >
       Get complete Book
       <ArrowBigRight size={20} />
-    </a>
+    </Link>
   );
 
   return (

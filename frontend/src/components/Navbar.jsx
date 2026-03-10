@@ -31,7 +31,7 @@ function Navbar() {
         
         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
           <div className="w-10 rounded-full overflow-hidden">
-            <img alt="Logo" src="logo/transparent-chakra.png" className="scale-125 object-cover" />
+            <img alt="Logo" src="logo/smol-transparent-chakra.png" className="scale-125 object-cover" />
           </div>
         </div>
         <a className="btn btn-ghost text-xl">Project Atmn</a>

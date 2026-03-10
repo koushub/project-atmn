@@ -3,11 +3,15 @@ import React, { useState, useEffect } from "react";
 import { BookOpen, Loader2 } from "lucide-react"; // Added Loader2 icon
 
 const ReadBook = () => {
-  const [activeLang, setActiveLang] = useState("hindi + english");
+  const [activeLang, setActiveLang] = useState("sanskrit + hindi + english");
   const [isLoading, setIsLoading] = useState(true);
 
   const books = {
-    "hindi + english": "https://archive.org/embed/ashtavakra-gita-by-swami-nityaswarupananda",
+    "sanskrit + hindi + english":
+      "https://archive.org/embed/ashtavakra-gita-by-swami-nityaswarupananda",
+    gujarati: "https://archive.org/embed/in.ernet.dli.2015.520267",
+    tamil:
+      "https://archive.org/embed/Acc.No.12233GnanaSaramsaAnubhavaSurukkam2000",
     malayalam: "https://archive.org/embed/Ashtavakra_Gita_Malayalam",
     telugu: "https://archive.org/embed/in.ernet.dli.2015.391502",
   };
@@ -28,7 +32,8 @@ const ReadBook = () => {
           <BookOpen size={32} />
         </div>
         <h1 className="text-3xl md:text-5xl font-serif font-bold text-gray-900">
-          The Complete <span className="text-orange-600 italic">Ashtavakra</span> Gita
+          The Complete{" "}
+          <span className="text-orange-600 italic">Ashtavakra</span> Gita
         </h1>
         <p className="text-gray-600 font-serif text-lg">
           Select your preferred language to begin reading.
@@ -55,12 +60,13 @@ const ReadBook = () => {
 
       {/* The Container */}
       <div className="relative w-full bg-[#1e1e1e] rounded-2xl shadow-2xl border border-gray-200 overflow-hidden h-[70vh] md:h-[85vh]">
-        
         {/* LOADER OVERLAY: Only shows when isLoading is true */}
         {isLoading && (
           <div className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-[#1e1e1e] text-orange-500">
             <Loader2 className="w-12 h-12 animate-spin mb-4" />
-            <p className="font-serif animate-pulse text-lg">Opening the Granth...</p>
+            <p className="font-serif animate-pulse text-lg">
+              Opening the Granth...
+            </p>
           </div>
         )}
 

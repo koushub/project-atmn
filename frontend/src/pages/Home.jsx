@@ -1,9 +1,18 @@
 import React from "react";
-import { ArrowRight, ArrowBigRight, Users, Star, ScrollText, BookOpen, CornerRightDown } from "lucide-react";
+import {
+  ArrowRight,
+  ArrowBigRight,
+  Users,
+  Star,
+  ScrollText,
+  BookOpen,
+  CornerRightDown,
+} from "lucide-react";
 import EmailPreview from "../components/EmailPreview";
 import Pricing from "../components/Pricing";
 import Features from "../components/Features";
 import Footer from "../components/Footer";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -36,7 +45,7 @@ const Home = () => {
           </p>
 
           {/* Buttons - Made smaller (px-6 py-3 instead of px-8 py-4) */}
-          <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start pt-2">
+          {/* <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start pt-2">
             <a
               href="#pricing"
               className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-full font-bold shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 text-sm md:text-base cursor-pointer"
@@ -55,8 +64,31 @@ const Home = () => {
               Read Books
               <ArrowBigRight size={20} />
             </a>
+          </div> */}
+          {/* Buttons Container - Changed gap-3 to gap-2 */}
+          <div className="flex flex-col sm:flex-row gap-2 justify-center lg:justify-start pt-2">
+            <a
+              href="#pricing"
+              /* Reduced px-6 to px-4 for a tighter fit */
+              className="bg-orange-600 hover:bg-orange-700 text-white px-4 py-3 rounded-full font-bold shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 text-sm md:text-base cursor-pointer"
+            >
+              Start Your Journey <ArrowRight size={18} />
+            </a>
+            <a
+              href="#preview"
+              className="border border-orange-200 hover:border-orange-300 bg-white text-gray-700 px-4 py-3 rounded-full font-bold transition-all text-sm md:text-base hover:bg-orange-50 cursor-pointer flex items-center justify-center"
+            >
+              Read Sample
+            </a>
+            {/* Link to /read page */}
+            <Link
+              to="/read"
+              className="flex items-center gap-2 cursor-pointer bg-gradient-to-r from-amber-700 to-amber-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:from-amber-500 hover:to-amber-700 transition duration-300"
+            >
+              Read Books
+              <ArrowBigRight size={20} />
+            </Link>
           </div>
-
           {/* NEW SECTION: Social Proof */}
           <div className="pt-6 border-t border-gray-100 mt-6 flex flex-wrap justify-center lg:justify-start gap-x-8 gap-y-4">
             <div className="flex items-center gap-2 text-gray-600">

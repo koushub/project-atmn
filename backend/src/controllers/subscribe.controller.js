@@ -4,37 +4,33 @@ const { sendWelcomeEmail } = require('../services/email.service');
 const { getVerse } = require('../services/verse.service');
 
 // 1. The Subscription Logic
+// subscribe.controller.js
 const handleSubscription = async (req, res) => {
   const { email } = req.body;
-
-  if (!email) {
-    return res.status(400).json({ error: "Email is required" });
-  }
+  if (!email) return res.status(400).json({ error: "Email is required" });
 
   try {
-    // Check if the email is already in the database
     let existingSubscriber = await Subscriber.findOne({ email });
     if (existingSubscriber) {
       if (!existingSubscriber.isActive) {
-         existingSubscriber.isActive = true;
-         await existingSubscriber.save();
+        existingSubscriber.isActive = true;
+        await existingSubscriber.save();
       } else {
-         return res.status(400).json({ error: "You are already subscribed!" });
+        return res.status(400).json({ error: "You are already subscribed!" });
       }
     } else {
-      // Create and save the new subscriber
       const newSubscriber = new Subscriber({ email, currentVerse: '1.1' });
       await newSubscriber.save();
     }
 
-    // Fetch the first verse and send the welcome email
-    const firstVerse = getVerse("1.1"); 
-    await sendWelcomeEmail(email, firstVerse);
-    
-    console.log(`New subscriber saved and welcome email sent: ${email}`);
-    
-    // THIS IS WHAT WAS MISSING: Telling the frontend "We are done!"
-    return res.status(200).json({ message: "Subscription successful!" });
+    // ✅ Respond immediately — don't await the email
+    res.status(200).json({ message: "Subscription successful!" });
+
+    // Send email in background (fire and forget)
+    const firstVerse = getVerse("1.1");
+    sendWelcomeEmail(email, firstVerse).catch(err =>
+      console.error("Welcome email failed:", err)
+    );
 
   } catch (error) {
     console.error("Subscription error:", error);

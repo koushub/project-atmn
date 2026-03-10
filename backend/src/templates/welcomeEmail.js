@@ -1,7 +1,7 @@
 // src/templates/welcomeEmail.js
 const generateWelcomeEmail = (email, verseData) => {
 
-  const baseUrl = process.env.BACKEND_URL || 'http://localhost:5000';
+  const baseUrl = process.env.BACKEND_URL || 'https://project-atmn-backend.onrender.com';
 
   // Format the Sanskrit text so the \n characters become HTML line breaks
   const formattedSanskrit = verseData.sanskrit.replace(/\n/g, '<br>');

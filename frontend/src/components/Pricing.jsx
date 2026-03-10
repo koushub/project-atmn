@@ -14,7 +14,7 @@ const Pricing = () => {
 
     try {
       // Axios handles the JSON stringification and headers for you
-      await axios.post("http://127.0.0.1:5000/api/subscribe", { email });
+      await axios.post("https://project-atmn-backend.onrender.com/api/subscribe", { email });
 
       setStatus("success");
       setEmail("");

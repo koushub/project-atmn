@@ -1,5 +1,9 @@
 # ॐ Project Atmn (अत्मन्)
 
+[![Live Site](https://img.shields.io/badge/Live-Deployment-orange?style=for-the-badge&logo=render)](https://app.project-atmn.in/)
+
+> **Experience the Ashtavakra Gita every morning.** One profound verse on non-duality delivered to your inbox daily.
+
 **Project Atmn** is a full-stack "Wisdom-as-a-Service" platform that delivers the non-dual teachings of the **Ashtavakra Gita** directly to seekers' inboxes every morning. It combines a high-performance React frontend with a robust Node.js/MongoDB backend and an automated cron-job delivery system.
 
 ## ✨ Features

@@ -83,7 +83,7 @@ const Home = () => {
             {/* Link to /read page */}
             <Link
               to="/read"
-              className="flex items-center gap-2 cursor-pointer bg-gradient-to-r from-amber-700 to-amber-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:from-amber-500 hover:to-amber-700 transition duration-300"
+              className="flex items-center justify-center gap-2 cursor-pointer bg-gradient-to-r from-amber-700 to-amber-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:from-amber-500 hover:to-amber-700 transition duration-300"
             >
               Read Books
               <ArrowBigRight size={20} />
